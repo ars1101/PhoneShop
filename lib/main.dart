@@ -63,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
     "https://consumer.huawei.com/content/dam/huawei-cbg-site/mkt/ru/plp/5-0/phones/mate-xs2.png"
   ];
   List texts = [
-    "Смартфон HUAWEI nova 11i оснащен полноэкранным IPS-дисплеем диагональю 6.8 дюймов, что удобно для просмотра фильмов, фотографий, игр или приложений. Тонкий корпус черного цвета изготовлен из прочного пластика, устойчивого к воздействию внешних факторов. Благодаря 8-ядерному процессору и 8 ГБ оперативной памяти, загрузка данных осуществляется с высокой скоростью. Частота экрана 90 Гц обеспечивает плавный переход и смену картинки.Смартфон HUAWEI nova 11i имеет камеру 48+2 Мп.",
+    "Смартфон HUAWEI nova 11i оснащен полноэкранным IPS-дисплеем диагональю 6.8 дюймов, что удобно для просмотра фильмов, фотографий, игр или приложений. Тонкий корпус черного цвета изготовлен из прочного пластика, устойчивого к воздействию внешних факторов. Благодаря 8-ядерному процессору и 8 ГБ оперативной памяти, загрузка данных осуществляется с высокой скоростью. Частота экрана 90 Гц.  Тонкий корпус черного цвета изготовлен из прочного пластика, устойчивого к воздействию внешних факторов.",
     "Смартфон HUAWEI nova Y91 характеризуется высокой производительностью и многофункциональностью. Модель обеспечивает моментальную загрузку и быструю работу за счет 8-ядерного процессора и 8 ГБ оперативной памяти. Мощная батарея емкостью 7000 мА*ч обеспечивает активную работу до 29 ч в режиме видео. IPS-дисплей диагональю 6.95 дюйма удобен для просмотра фильмов и других графических файлов благодаря широкому обзору и моментальному отклику. Смартфон HUAWEI nova Y91 имеет память 128 ГБ.",
     "Смартфон HUAWEI P60 Pro 512 ГБ оснащен изогнутым экраном 6.67 дюйма с панелью OLED. Он погружает в реалистичное изображение с натуральными оттенками и высокой детализацией. Устройство выполнено в стеклянном корпусе, защищенном от воздействия пыли и влаги по стандарту IP68. Процессор Snapdragon 8+ Gen 1 работает совместно с 12 ГБ ОЗУ для достижения мощного вычислительного потенциала.",
     "Смартфон HUAWEI Mate50 Pro серебристого цвета обеспечивает высокую производительность и детализацию. Модель рассчитана на установку двух SIM-карт и поддерживает связь в сети 4G. Тонкий корпус изготовлен из прочного металла и имеет высокую степень защиты от попадания внутрь влаги и пыли. Устройство выдерживает погружение под воду и надолго сохраняет первоначальный вид. Безрамочный дисплей OLED со сниженным мерцанием и частотой 120 Гц обеспечивает плавность линий и передает естественные и яркие цвета.Смартфон HUAWEI Mate50 Pro позволяет запечатлеть мельчайшие детали и подходит для макросъемки. Камера 64+50+13 Мп с высокой чувствительностью улавливает оттенки и переходы, создавая профессиональные кадры",
@@ -85,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
               return Column(children: [
                 Image(image: NetworkImage(images[index])),
                 SizedBox(
-                  height: 30,
+                  height: 28,
                   width: double.infinity,
                 ),
                 Text(names[index],
@@ -98,101 +98,125 @@ class _MyHomePageState extends State<MyHomePage> {
                       height: 0,
                     )),
                 SizedBox(
-                  height: 15,
+                  height: 25,
                   width: double.infinity,
-                ),
-                Text(
+                ),Stack(alignment: Alignment.bottomCenter, children: [SizedBox( width: 374,
+                child: Text(
                   texts[index],
-                ),
+                )),
+                Container(
+                  width: double.infinity,
+                  height: 60,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment(0.00, -1.00),
+                      end: Alignment(0, 1),
+                      colors: [Colors.white.withOpacity(0), Colors.white.withOpacity(0.84375), Colors.white.withOpacity(0.84375), Colors.white.withOpacity(0.84375), Colors.white],
+                    ),
+                  ),
+                )]),
                 Spacer(),
-                SizedBox(
-                    width: 350,
-                    height: 40,
-                    child: OutlinedButton(
-                        onPressed: () {
-                          showModalBottomSheet(
-                              context: context,
-                              builder: (context) {
-                                return SizedBox(
-                                  height: 140,
-                                  child: Center(
-                                    child: Column(
-                                      children: [
-                                        SizedBox(
-                                          height: 20,
-                                          width: double.infinity,
-                                        ),
-                                        SizedBox(
-                                            width: 350,
-                                            height: 40,
-                                            child: OutlinedButton(
-                                                onPressed: () {},
-                                                child: Text(
-                                                    "Добавить в корзину",
-                                                    style: TextStyle( fontSize: 20,
-                                                        color: Colors.cyan)),
-                                                style: OutlinedButton.styleFrom(
-                                                    backgroundColor:
-                                                        Colors.white,
-                                                    shape:
-                                                        RoundedRectangleBorder(
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .all(
-                                                      Radius.circular(15),
-                                                    )),
-                                                    side: BorderSide(
-                                                        width: 2.0,
-                                                        color: Colors.cyan)))),
-                                        SizedBox(
-                                          height: 20,
-                                          width: double.infinity,
-                                        ),
-                                        SizedBox(
-                                            width: 350,
-                                            height: 40,
-                                            child: OutlinedButton(
-                                                onPressed: () {},
-                                                child: Text(
-                                                  "Купить в один клик",
-                                                  style: TextStyle(fontSize: 20,
-                                                      color: Colors.white),
-                                                ),
-                                                style: OutlinedButton.styleFrom(
-                                                    backgroundColor:
-                                                        Colors.cyan,
-                                                    shape:
-                                                        RoundedRectangleBorder(
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .all(
-                                                      Radius.circular(15),
-                                                    )),
-                                                    side: BorderSide(
-                                                        width: 5.0,
-                                                        color: Colors.cyan))))
-                                      ],
+                Stack(
+                  children: [
+
+                    SizedBox(
+                      width: 350,
+                      height: 48,
+                      child: OutlinedButton(
+                          onPressed: () {
+                            showModalBottomSheet(
+                                context: context,
+                                builder: (context) {
+                                  return SizedBox(
+                                    height: 161,
+                                    child: Center(
+                                      child: Column(
+                                        children: [
+                                          SizedBox(
+                                            height: 26,
+                                            width: double.infinity,
+                                          ),
+                                          SizedBox(
+                                              width: 350,
+                                              height: 40,
+                                              child: OutlinedButton(
+                                                  onPressed: () {},
+                                                  child: Text(
+                                                      "Добавить в корзину",
+                                                      style: TextStyle( fontSize: 20,
+                                                          color: Color(0xFF5096FF),
+                                                        fontFamily: 'Inter',
+                                                        fontWeight: FontWeight.w700,
+                                                        height: 0,)),
+                                                  style: OutlinedButton.styleFrom(
+                                                      backgroundColor:
+                                                          Colors.white,
+                                                      shape:
+                                                          RoundedRectangleBorder(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .all(
+                                                        Radius.circular(18),
+                                                      )),
+                                                      side: BorderSide(
+                                                          width: 2.0,
+                                                          color: Color(0xFF5096FF))))),
+                                          SizedBox(
+                                            height: 20,
+                                            width: double.infinity,
+                                          ),
+                                          SizedBox(
+                                              width: 350,
+                                              height: 40,
+                                              child: OutlinedButton(
+                                                  onPressed: () {},
+                                                  child: Text(
+                                                    "Купить в один клик",
+                                                    style: TextStyle(fontSize: 20,
+                                                        color: Colors.white, fontFamily: 'Inter',
+                                                      fontWeight: FontWeight.w700,
+                                                      height: 0,),
+
+                                                  ),
+                                                  style: OutlinedButton.styleFrom(
+                                                      backgroundColor:
+                                                      Color(0xFF5096FF),
+                                                      shape:
+                                                          RoundedRectangleBorder(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .all(
+                                                        Radius.circular(18),
+                                                      )),
+                                                      side: BorderSide(
+                                                          width: 5.0,
+                                                          color: Color(0xFF5096FF)))))
+                                        ],
+                                      ),
                                     ),
-                                  ),
-                                );
-                              });
-                        },
-                        child: Text(
-                          "Купить",
-                          style: TextStyle(fontSize: 20, color: Colors.white),
-                        ),
-                        style: OutlinedButton.styleFrom(
-                            backgroundColor: Colors.cyan,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(
-                              Radius.circular(15),
-                            )),
-                            side: BorderSide(width: 5.0, color: Colors.cyan)))),
+                                  );
+                                });
+                          },
+                          child:
+                            Text(
+                            "Купить",
+                            style: TextStyle(fontSize: 20, color: Colors.white, fontFamily: 'Inter',
+                              fontWeight: FontWeight.w700,
+                              height: 0,),
+                          ),
+                          style: OutlinedButton.styleFrom(
+                              backgroundColor: Color(0xFF5096FF),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.all(
+                                Radius.circular(18),
+                              )),
+                              side: BorderSide(width: 5.0, color: Color(0xFF5096FF)))))],
+                ),
                 SizedBox(
-                  height: 30,
+                  height: 23,
                   width: double.infinity,
                 )
-              ]);
+                ]);
             }));
   }
 }
